@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="ResourceName">
+
+
+    <ImageView
+        android:id="@+id/shelf_background"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/shelf_wood"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/see_all_shelf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="2dp"
+        android:background="@drawable/button_interests"
+        android:gravity="center"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:text="@string/see_all"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/sticky_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/shelf_privacy"
+        android:layout_toEndOf="@+id/see_all_shelf"
+        android:layout_alignBottom="@+id/shelf_name"
+        android:layout_alignParentTop="true"
+        android:minHeight="100dp"
+        android:layout_marginBottom="-20dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/shelf_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_toStartOf="@+id/shelf_privacy"
+        android:layout_toEndOf="@+id/see_all_shelf"
+        android:gravity="center"
+        android:paddingStart="22dp"
+        android:paddingEnd="22dp"
+        android:paddingBottom="8dp"
+        android:text="@string/shelve_name"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/shelf_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/see_all_shelf"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_interests"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="2dp"
+        android:paddingEnd="4dp"
+        android:paddingStart="4dp"
+        android:gravity="center"
+        android:text="@string/privacy_public"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shelf_name"
+        android:layout_alignBottom="@+id/shelf_background"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="45dp"
+        android:baselineAligned="false"
+        android:gravity="center_horizontal|bottom"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_shelf_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_shelf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

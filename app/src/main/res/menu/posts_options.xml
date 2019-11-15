@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/author_group">
+
+        <item
+            android:id="@+id/action_edit_question"
+            android:title="@string/edit"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/action_delete_question"
+            android:title="@string/delete"
+            app:showAsAction="never" />
+    </group>
+
+    <group android:id="@+id/others_group">
+
+        <item
+            android:id="@+id/action_report_question"
+            android:title="@string/report"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_hide_question"
+            android:title="@string/hide"
+            app:showAsAction="never" />
+    </group>
+
+</menu>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGray">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
+        android:layout_gravity="center_horizontal|top" >
+
+        <ImageView
+            android:id="@+id/back_button_read_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:padding="6dp"
+            android:src="@drawable/back_navigation"
+            tools:ignore="ContentDescription" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_pic_read_article"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/img"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/author_read_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:textColor="@android:color/white"
+            android:textStyle="bold|normal"
+            android:textSize="18sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/et_comment_read_article"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/cover_read_article"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/leee"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/line_top_read_article"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="6dp"
+                android:background="@color/gray"
+                android:layout_below="@+id/cover_read_article"/>
+
+            <LinearLayout
+                android:id="@+id/bottom_layout_post_card"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/line_top_read_article"
+                android:gravity="center"
+                android:baselineAligned="false">
+
+
+                <LinearLayout
+                    android:id="@+id/like_layout_read_article"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/circleBorder"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bt_like_img_read_article"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@mipmap/ic_favorite"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/like_button_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/like"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/share_layout_read_article"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/circleBorder"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/share_btn"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/share"
+                        android:id="@+id/share_details"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line_bottom_read_article"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                android:layout_below="@+id/bottom_layout_post_card"/>
+
+            <TextView
+                android:id="@+id/title_read_article"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:textColor="@color/black"
+                android:background="#99ffffff"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/description_read_article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_below="@+id/line_bottom_read_article"
+                android:gravity="start"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comments_recycler_read_article"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/description_read_article"/>
+        </RelativeLayout>
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/et_comment_read_article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/comment"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:layout_alignParentBottom="true"
+        android:inputType="textMultiLine"
+        tools:ignore="Autofill" />
+
+    <ImageView
+        android:id="@+id/btn_send_read_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/et_comment_read_article"
+        android:layout_alignBottom="@id/et_comment_read_article"
+        android:layout_marginEnd="6dp"
+        android:layout_alignEnd="@id/et_comment_read_article"
+        android:src="@drawable/ic_send_black_24dp"
+        tools:ignore="ContentDescription" />
+</RelativeLayout>

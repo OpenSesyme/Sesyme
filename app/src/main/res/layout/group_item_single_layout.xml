@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="182dp"
+    android:layout_height="220dp"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@color/iconsColor"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/group_image_single_item"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/img"/>
+
+            <TextView
+                android:id="@+id/group_name_single_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/group_image_single_item"
+                android:layout_marginTop="8dp"
+                android:text="@string/loading"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/group_time_single_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/group_name_single_item"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="@string/moments_ago"/>
+
+            <TextView
+                android:id="@+id/members_number_single_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/group_time_single_item"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:text="@string/zero"
+                tools:ignore="SmallSp" />
+
+            <View
+                android:id="@+id/line_break"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/group_time_single_item"
+                android:background="@android:color/darker_gray"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/group_description_single_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:layout_below="@+id/line_break"
+                android:paddingTop="20dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:textSize="10sp"
+                android:text="@string/loading"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/group_privacy_single_item"
+        android:layout_width="20dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/cluster_privacy"
+        android:elevation="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/app_name"/>
+</RelativeLayout>

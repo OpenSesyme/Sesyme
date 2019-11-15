@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6400AE</color>
+    <color name="colorPrimaryDark">#6f3d92</color>
+    <color name="colorAccent">#6400AE</color>
+    <color name="highlight">#1a6400AE</color>
+    <color name="buttonsColor">#6400AE</color>
+    <color name="lightPurple">#E288CB</color>
+    <color name="circleBorder">#50FFFFFF</color>
+    <color name="iconsColor">#6400AE</color>
+    <color name="black">#000</color>
+    <color name="context_textColor">#808080</color>
+    <color name="background">#F2F2F2</color>
+    <color name="buttonColor">#6400AE</color>
+    <color name="white">#ffffff</color>
+    <color name="colorTransparent">#00ffffff</color>
+    <color name="gray">#8B8B8B</color>
+    <color name="lightGray">#F8F8F8</color>
+    <color name="login_form_details_light">#1affffff</color>
+</resources>
