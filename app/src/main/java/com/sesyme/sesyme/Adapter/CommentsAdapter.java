@@ -199,13 +199,13 @@ public class CommentsAdapter extends FirestoreRecyclerAdapter<CommentsClass, Com
         @SuppressWarnings("WeakerAccess")
         public CommentHolder(@NonNull View itemView) {
             super(itemView);
+            likeImage = itemView.findViewById(R.id.bt_like_img_comment_item);
+            btShare = itemView.findViewById(R.id.share_layout_comment_item);
+            btLike = itemView.findViewById(R.id.like_layout_comment_item);
             userName = itemView.findViewById(R.id.username_comment_item);
             comment = itemView.findViewById(R.id.message_comment_item);
-            time = itemView.findViewById(R.id.time_comment_item);
             likes = itemView.findViewById(R.id.likes_comment_item);
-            btLike = itemView.findViewById(R.id.like_layout_comment_item);
-            btShare = itemView.findViewById(R.id.share_layout_comment_item);
-            likeImage = itemView.findViewById(R.id.bt_like_img_comment_item);
+            time = itemView.findViewById(R.id.time_comment_item);
         }
     }
 }
