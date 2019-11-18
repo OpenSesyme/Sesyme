@@ -60,6 +60,13 @@ dependencies {
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
     implementation 'com.google.firebase:firebase-perf:19.0.1'
     implementation 'androidx.preference:preference:1.1.0'
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def appName = "sesyme"
+            outputFileName = appName + ".apk"
+        }
+    }
 }
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android-extensions'
