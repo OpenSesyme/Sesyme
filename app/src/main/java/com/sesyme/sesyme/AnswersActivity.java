@@ -2,6 +2,7 @@ package com.sesyme.sesyme;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -153,6 +154,7 @@ public class AnswersActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_answer);
 
         setSupportActionBar(toolbar);
+        description.setTextIsSelectable(true);
 
         final ActionBar ab = getSupportActionBar();
         assert ab != null;
@@ -380,7 +382,9 @@ public class AnswersActivity extends AppCompatActivity {
             }
         } catch (ParseException e) {
             e.printStackTrace();
-            Log.e("ConvertTimeE", Objects.requireNonNull(e.getMessage()));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                Log.e("ConvertTimeE", Objects.requireNonNull(e.getMessage()));
+            }
         }
         return convTime;
     }

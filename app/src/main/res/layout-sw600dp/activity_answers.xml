@@ -50,7 +50,7 @@
                     android:paddingTop="8dp"
                     android:paddingEnd="8dp"
                     android:paddingBottom="8dp"
-                    android:src="@drawable/back_navigation"
+                    app:srcCompat="@drawable/back_navigation"
                     tools:ignore="ContentDescription,RtlSymmetry" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -166,6 +166,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="15dp"
                     android:paddingEnd="6dp"
+                    android:textIsSelectable="true"
                     android:paddingStart="1dp"
                     android:paddingBottom="6dp"
                     android:layout_toStartOf="@+id/ratting_image_answers"
@@ -204,6 +205,7 @@
                     android:layout_height="match_parent"
                     android:layout_below="@+id/imgView_line_answers"
                     android:background="@color/background"
+                    android:descendantFocusability="beforeDescendants"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
@@ -275,5 +277,5 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="12dp"
         android:backgroundTint="@color/iconsColor"
-        android:src="@drawable/ic_mode_edit_white_24dp" />
+        app:srcCompat="@drawable/ic_mode_edit_white_24dp" />
 </RelativeLayout>

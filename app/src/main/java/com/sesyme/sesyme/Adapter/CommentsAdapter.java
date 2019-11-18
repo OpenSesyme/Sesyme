@@ -107,6 +107,8 @@ public class CommentsAdapter extends FirestoreRecyclerAdapter<CommentsClass, Com
             }
         });
 
+        holder.comment.setTextIsSelectable(true);
+
         holder.btLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -206,6 +208,8 @@ public class CommentsAdapter extends FirestoreRecyclerAdapter<CommentsClass, Com
             comment = itemView.findViewById(R.id.message_comment_item);
             likes = itemView.findViewById(R.id.likes_comment_item);
             time = itemView.findViewById(R.id.time_comment_item);
+
+            comment.setTextIsSelectable(true);
         }
     }
 }
