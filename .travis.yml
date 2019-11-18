@@ -45,8 +45,8 @@ after_deploy:
   - rm -rf $TRAVIS_BUILD_DIR/app/build/outputs
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_5d0773461879_key -iv $encrypted_5d0773461879_iv
-    -in key.json.enc -out key.json -d
+#  - openssl aes-256-cbc -K $encrypted_5d0773461879_key -iv $encrypted_5d0773461879_iv
+#    -in key.json.enc -out key.json -d
   - echo no | android create avd --force -n test -t android-$EMULATOR_API_LEVEL --abi
     $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
