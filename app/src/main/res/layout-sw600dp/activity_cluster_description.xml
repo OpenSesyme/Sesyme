@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/action_bar_cluster_desc"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/iconsColor">
+
+        <ImageView
+            android:id="@+id/back_button_clustered"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:src="@drawable/back_navigation"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/action_title_clustered"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/requests_clustered"
+            android:layout_toEndOf="@+id/back_button_clustered"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/profile"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/requests_clustered"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:paddingStart="6dp"
+            android:paddingEnd="12dp"
+            android:text="@string/requests"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_save_clustered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="6dp"
+            android:background="@null"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/action_bar_cluster_desc">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:elevation="3dp"
+                android:layout_alignTop="@+id/icon_clustered"
+                android:background="@drawable/gradient_top_black">
+
+                <ImageView
+                    android:id="@+id/bt_add_clustered"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="6dp"
+                    android:elevation="3dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_person_add_white_24dp"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/bt_change_icon_clustered"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="6dp"
+                    android:elevation="3dp"
+                    android:src="@mipmap/ic_camera"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/icon_clustered"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/leee"
+                tools:ignore="ContentDescription,UnusedAttribute" />
+
+            <LinearLayout
+                android:id="@+id/bts_layout_clustered"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/description_clustered"
+                android:baselineAligned="false"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/poll_layout_clustered"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bt_like_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/polls"
+                        tools:ignore="ContentDescription" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/quiz_layout_clustered"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bt_pollz"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/quiz"
+                        tools:ignore="ContentDescription" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/docs_layout_clustered"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bt_comment_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/attach_pdf_dialog"
+                        tools:ignore="ContentDescription" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/images_layout_clustered"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/attach_img"
+                        tools:ignore="ContentDescription" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_clustered"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:elevation="2dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/progress_view_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                tools:ignore="RelativeOverlap" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_alignBottom="@+id/icon_clustered"
+                android:background="@drawable/gradient_black" />
+
+            <TextView
+                android:id="@+id/privacy_text_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/icon_clustered"
+                android:layout_alignTop="@+id/created_text_clustered"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:text="@string/privacy_public"
+                android:textColor="@color/white"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/created_text_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/icon_clustered"
+                android:layout_alignParentEnd="true"
+                android:maxLines="1"
+                android:text="@string/loading"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="RelativeOverlap" />
+
+            <EditText
+                android:id="@+id/title_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/icon_clustered"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-light"
+                android:inputType="textPersonName"
+                android:background="@null"
+                android:maxLines="1"
+                android:text="@string/loading"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:ignore="Autofill,LabelFor" />
+
+            <ImageView
+                android:id="@+id/edit_name_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/title_clustered"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="6dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_mode_edit_black_24dp"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/description_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_clustered"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:inputType="textShortMessage"
+                android:background="@null"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/loading"
+                android:textSize="18sp"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/members_text_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recycler_admin_clustered"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/members"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/members_number_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recycler_admin_clustered"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/zero"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/admin_text_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bts_layout_clustered"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/admin"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/admin_number_clustered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bts_layout_clustered"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/zero"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+            <View
+                android:id="@+id/line_admin_number"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/admin_number_clustered"
+                android:layout_marginTop="2dp"
+                android:background="@color/black" />
+
+            <View
+                android:id="@+id/recycler_members"
+                style="@style/Divider"
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/members_number_clustered"
+                android:layout_marginTop="2dp"
+                android:background="@color/black" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_admin_clustered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line_admin_number"
+                android:layout_marginTop="4dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_members_clustered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/members_text_clustered"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

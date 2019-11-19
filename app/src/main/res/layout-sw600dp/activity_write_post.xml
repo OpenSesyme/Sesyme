@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/write_post_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="6dp"
+    android:paddingEnd="6dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tags_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="@string/please_choose_a_category"
+                android:textSize="@dimen/large_text_size"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hash_tag_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tags_label"
+                android:layout_marginBottom="6dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hash_tag_text"
+                android:layout_marginBottom="4dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/title_write_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/title"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/title_text_size"
+                    android:background="@null"
+                    android:maxLines="3"
+                    android:inputType="textShortMessage|textMultiLine"
+                    tools:ignore="Autofill" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ListView
+                android:id="@+id/suggestions_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:background="@color/white"
+                android:layout_below="@+id/description_layout"
+                android:visibility="gone"
+                tools:ignore="NestedScrolling" />
+
+            <RelativeLayout
+                android:id="@+id/description_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/input_layout_title">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/emoji_button">
+
+                    <developer.semojis.Helper.EmojiconEditText
+                        android:id="@+id/review_description_write_review"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="start"
+                        android:hint="@string/description"
+                        android:inputType="textMultiLine|textAutoComplete"
+                        android:textSize="@dimen/medium_text_size"
+                        android:paddingBottom="6dp"
+                        tools:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/emoji_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/attachment_answer"
+                    android:layout_alignBottom="@+id/attachment_answer"
+                    android:layout_toStartOf="@+id/attachment_answer"
+                    android:src="@mipmap/ic_mood"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/attachment_answer"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignBottom="@+id/input_layout_description"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/attach_img"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description_layout"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/cancel_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="12dp"
+                    android:src="@mipmap/ic_cancel"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/img_reply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="-12dp"
+                    android:layout_below="@+id/cancel_image"
+                    android:contentDescription="@string/post_image"
+                    android:src="@drawable/chemistry"/>
+
+                <TextView
+                    android:id="@+id/pdf_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/img_reply"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="24dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_comment_post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_follow"
+            android:text="@string/comment"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text_size"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_answer_post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_follow"
+            android:text="@string/answer"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text_size"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_question_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="24dp"
+        android:background="@drawable/button_follow"
+        android:textSize="@dimen/medium_text_size"
+        android:text="@string/post_question"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/progress_text_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/title_text_size"
+        android:textColor="@color/iconsColor"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_post"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+</RelativeLayout>

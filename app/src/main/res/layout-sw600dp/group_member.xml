@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_marginTop="6dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_pic_group_member"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/img"
+        android:layout_centerHorizontal="true"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/remove_group_member"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/profile_pic_group_member"
+        android:layout_alignEnd="@+id/name_group_member"
+        android:layout_marginTop="-6dp"
+        android:src="@mipmap/ic_cancel"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/name_group_member"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_pic_group_member"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:text="@string/loading"
+        android:gravity="center"
+        android:textSize="16sp"/>
+</RelativeLayout>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".CreateCluster"
+            android:paddingBottom="28dp">
+
+            <EditText
+                android:id="@+id/et_group_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/group_icon"
+                android:layout_alignBottom="@+id/group_icon"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/group_icon"
+                android:background="@drawable/et_ui"
+                android:hint="@string/group_name"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/title_text_size"
+                android:textStyle="bold"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/et_group_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/group_privacy_layout"
+                android:layout_marginTop="12dp"
+                android:hint="@string/group_description"
+                android:inputType="textPersonName"
+                android:paddingStart="12dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="4dp"
+                android:textSize="18sp"
+                tools:ignore="Autofill" />
+
+            <ImageView
+                android:id="@+id/add_icon_group"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignEnd="@+id/group_icon"
+                android:layout_alignBottom="@+id/group_icon"
+                android:layout_marginEnd="-2dp"
+                android:layout_marginBottom="-4dp"
+                android:elevation="1dp"
+                android:src="@drawable/ic_camera_enhance_black_24dp"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:id="@+id/action_bar_create_cluster"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@color/iconsColor"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/back_button_create_cluster"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:src="@drawable/back_navigation"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:text="@string/create_cluster"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/bt_create_cluster"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="12dp"
+                    android:text="@string/create"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/group_privacy_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/group_icon"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="18dp"
+                android:layout_toStartOf="@+id/group_privacy_radio"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/group_private"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/make_it_private"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/small_text_size"/>
+
+                <TextView
+                    android:id="@+id/group_private_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description_private"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/group_public"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/make_it_public"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/small_text_size"/>
+
+                <TextView
+                    android:id="@+id/group_public_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description_public"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/create_group_progress"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:elevation="2dp" />
+
+            <RadioGroup
+                android:id="@+id/group_privacy_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/group_privacy_layout"
+                android:layout_alignBottom="@+id/group_privacy_layout"
+                android:layout_alignParentEnd="true"
+                android:checkedButton="@id/group_public_button">
+
+                <RadioButton
+                    android:id="@+id/group_private_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/radiobutton_selector"
+                    android:textColor="@drawable/radiobutton_color_selector"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="12dp" />
+
+                <RadioButton
+                    android:id="@+id/group_public_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:button="@drawable/radiobutton_selector"
+                    android:textColor="@drawable/radiobutton_color_selector"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="12dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/create_group_progress_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="2dp"
+                android:text="@string/zero"
+                android:textColor="@color/iconsColor"
+                android:textSize="@dimen/title_text_size" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/group_members_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_group_description"
+                android:paddingBottom="20dp"
+                android:nestedScrollingEnabled="true"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/group_icon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@+id/action_bar_create_cluster"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/img" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ListView
+        android:id="@+id/list_view_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_group_members"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="-12dp"
+        android:elevation="2dp"
+        android:nestedScrollingEnabled="true"
+        android:stackFromBottom="true"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/et_group_members"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:layout_marginTop="12dp"
+        android:hint="@string/search_friends_to_add"
+        android:inputType="textPersonName"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="6dp"
+        android:paddingEnd="4dp"
+        android:textSize="@dimen/title_text_size"
+        tools:ignore="Autofill" />
+</RelativeLayout>
