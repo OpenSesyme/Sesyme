@@ -29,7 +29,7 @@ script:
 
 deploy:
 - provider: releases
-  api_key: "$GITHUB_TOKEN"
+  api_key: "GITHUB_TOKEN"
   file: "$TRAVIS_BUILD_DIR/app/build/outputs/apk/debug/sesyme.apk"
   skip_cleanup: true
   name: dev-build-$TRAVIS_TAG
