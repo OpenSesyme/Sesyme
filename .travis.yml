@@ -37,6 +37,7 @@ deploy:
     +'%F %T %Z').
   prerelease: true
   overwrite: true
+  edge: true
   target_commitish: "$TRAVIS_COMMIT"
   on:
     tags: true
