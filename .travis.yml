@@ -22,34 +22,20 @@ android:
   licenses:
   - android-sdk-license-.+
   - ".+"
-
 script:
-  - "./gradlew -Dtest.single=me.toptas.rssreader.UnitTestSuite clean test"
-  - "./gradlew assembleDebug"
-
+- "./gradlew -Dtest.single=me.toptas.rssreader.UnitTestSuite clean test"
+- "./gradlew assembleDebug"
 deploy:
-- provider: releases
-  api_key: "GITHUB_TOKEN"
+  provider: releases
   file: "$TRAVIS_BUILD_DIR/app/build/outputs/apk/debug/sesyme.apk"
-  skip_cleanup: true
-  name: dev-build-$TRAVIS_TAG
-  body: Automatic build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) built by Travis CI on $(date
-    +'%F %T %Z').
-  prerelease: true
-  overwrite: true
-  edge: true
-  target_commitish: "$TRAVIS_COMMIT"
+  api_key:
+    secure: VuUTgNqr2cI00dkQGOSLs1g6hnfVVXPlIhxx26yiPDp4RGJfqCNRk4oXQ8exlHbS/zg6j0tXyeYBmEHNXSRC5UQZ7sUDTIurvzdSDV01fwfyUxwHaK65cMG8QMaNMcyPQD9ajqRvXMuxV2Je6A1sgF4uLC04t+GGQUUR/PFFjC4kLyZ3rkBV7cLhE1hhiRaWvmhTF9oW1g9kxbTQWwTs303/KjdjMK5o5yhjFqwCWRMySv3BcF/rOA3QP8DbBJGjLThRBpc35TqGzSfO4R+diCsF68ja0DG3diSSKR2pY13i6GwVBGE2jos31uuXBbklb3YRQCmv/d5vrrxtnYYAdkavYCgBHQafSXdsUZc7AL0dywUr2JttmAz2xBEyN10t4ZpXXJZdIT/ig8zsUVFhmGUvLs7qqKwM8/MUO2t7JJSxlVP42MeFBX+DNA8J+ZkvXY+i13NzQdYveEJQEuGHSj2+kR51piu5XdkI23atdHdg1i03Dg685oJHzofStSCRWYrSDD0nhIh5c5otVA92NQZejKJGxZ9RRo3/LGJmCbNSKDdxb+ptrU81DuFejzucKkXq+WWy5YXXXAbZd7wnVlT04Uq2/bV/gbaYYZpEv+9OxPCt1kdmmAiAjFMl5z95PcNHtYzjxhX5FcJDccAQxQdoyJhfynkoK4ZC0e5bucU=
   on:
-    tags: true
+    repo: OpenSesyme/Sesyme
     branch: develop
 after_deploy:
-  - rm -rf $TRAVIS_BUILD_DIR/app/build/outputs
-
+- rm -rf $TRAVIS_BUILD_DIR/app/build/outputs
 before_install:
-#  - openssl aes-256-cbc -K $encrypted_5d0773461879_key -iv $encrypted_5d0773461879_iv
-#    -in key.json.enc -out key.json -d
-  - yes | sdkmanager "platforms;android-29"
-  - echo no | android create avd --force -n test -t android-$EMULATOR_API_LEVEL --abi
-    $ANDROID_ABI
-#- openssl aes-256-cbc -K $encrypted_5d0773461879_key -iv $encrypted_5d0773461879_iv
-#  -in keystore.jks.enc -out keystore.jks -d
+- yes | sdkmanager "platforms;android-29"
+- echo no | android create avd --force -n test -t android-$EMULATOR_API_LEVEL --abi
+  $ANDROID_ABI
