@@ -34,6 +34,14 @@ deploy:
     tags: true
     repo: OpenSesyme/Sesyme
     branch: develop
+  skip_cleanup: true
+  name: dev-build-$TRAVIS_TAG
+  body: Automatic build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) built by Travis CI on $(date
+    +'%F %T %Z').
+  prerelease: true
+  overwrite: true
+  edge: true
+  target_commitish: "$TRAVIS_COMMIT"
 after_deploy:
 - rm -rf $TRAVIS_BUILD_DIR/app/build/outputs
 before_install:
